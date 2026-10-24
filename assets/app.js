@@ -43,14 +43,26 @@
     },
     say(list, opt = {}) {
       this.stop();
-      if (!this.ok) { warn(); return; }
+      const MAP = window.TTS_MAP || {};
+      if (!this.ok && !Object.keys(MAP).length) { warn(); return; }
       const my = this.token;
+      const base = document.body.dataset.lesson ? '../' : '';
       const arr = Array.isArray(list) ? list : [list];
       let i = 0;
       const next = () => {
         if (my !== this.token) return;
         if (i >= arr.length) { opt.done && opt.done(); return; }
         const idx = i++;
+        const f = MAP[String(arr[idx]).trim()];
+        if (f) {
+          const a = new Audio(base + f); this.audio = a;
+          a.onplay = () => opt.each && opt.each(idx);
+          a.onended = () => { this.timer = setTimeout(next, opt.gap == null ? 450 : opt.gap); };
+          a.onerror = () => { this.timer = setTimeout(next, 100); };
+          a.play().catch(() => { this.timer = setTimeout(next, 100); });
+          return;
+        }
+        if (!this.ok) { next(); return; }
         const u = new SpeechSynthesisUtterance(arr[idx]);
         u.lang = 'es-ES'; if (this.voice) u.voice = this.voice;
         u.rate = opt.rate || 0.88; u.pitch = opt.pitchOf ? opt.pitchOf(idx) : 1;
