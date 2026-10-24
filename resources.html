@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>음원 자료실 — Conversación I</title>
+<link rel="stylesheet" href="assets/style.css"></head>
+<body data-page="resources">
+<header class="bar"><div class="wrap"><a class="brand" href="index.html"><i>¡</i>Conversación I</a><span class="sp"></span><span class="nav"><a href="index.html">메인</a></span></div></header>
+<div class="hero"><div class="wrap"><h1 class="es" style="font-size:clamp(28px,5vw,44px)">음원 자료실</h1>
+<p class="sub">제공받은 mp3 80개를 단원별로 모았습니다. 재생 버튼을 눌러 들어 보세요.</p></div></div>
+<main class="wrap">
+<div class="note"><b>꼭 읽어 주세요</b> 이 mp3 파일들은 현재 교재(『스페인어 회화 I』, 12개 과)가 아니라 <b>「2022 개정」 다른 교재(Unidad 0–12, Minsu·Marta 등장)</b>의 음원으로 확인되었습니다. 그래서 각 과의 듣기 문제에는 자동으로 연결하지 않고, 교재 뒤쪽의 대본(Transcripciones)을 스페인어 음성으로 읽어 주는 방식을 썼습니다. 아래 「자동 인식 시작 부분」은 음성을 기계로 받아 적은 일부이며 틀릴 수 있습니다.</div>
+<div id="list"></div>
+</main>
+<footer><div class="wrap">올바른 음원이 준비되면 <code>data/audio-map.js</code>에 연결하면 각 듣기 문제에서 바로 재생됩니다.</div></footer>
+<script src="data/resources.js"></script>
+<script>
+(function(){
+  var root=document.getElementById('list'),h='';
+  Object.keys(window.RESOURCES).forEach(function(u){
+    h+='<h2 class="sec">Unidad '+u+'</h2>';
+    window.RESOURCES[u].forEach(function(r){
+      var t=String(r.hint||'').replace(/[<>&]/g,'');
+      h+='<div class="item" style="margin:10px 0"><div class="q"><span class="lab">'+r.f+'</span>'+(t?'<span class="hint" style="margin-left:8px">자동 인식 시작 부분: '+t.slice(0,70)+'…</span>':'')+'</div><audio controls preload="none" src="audio/'+r.f+'.mp3" style="width:100%;margin-top:6px"></audio></div>';
+    });
+  });
+  root.innerHTML=h;
+})();
+</script></body></html>

@@ -1,0 +1,88 @@
+window.LESSONS = window.LESSONS || {};
+window.LESSONS[4] = {
+  n: 4, es: 'Esta es mi familia', ko: '우리 가족',
+  topics: ['La familia', 'El estado civil', 'La edad', 'Identificación de personas', 'El carácter', 'El aspecto físico', 'Monedas y billetes', 'Números del 101 al 9.000'],
+  comm: ['Hablar sobre la familia', 'Preguntar y decir la edad', 'Describir el aspecto físico y el carácter de una persona'],
+  gram: ['Posesivos: formas átonas', 'Adjetivos y pronombres demostrativos', 'Presente de indicativo: tener, estar, ser', 'Interrogativos: cuánto, quién'],
+  blocks: [
+    { id: 'intro', kind: 'text', tag: 'Antes de empezar', title: '스페인어권의 가족', short: 'Antes de empezar', paras: [
+      ['Para la mayoría de españoles e hispanoamericanos la familia es lo más importante en sus vidas. Los padres, hijos, hermanos, nietos, tíos, primos, sobrinos, etc. son el núcleo de las relaciones personales.', '대부분의 스페인 사람과 중남미 사람에게 가족은 삶에서 가장 중요한 것입니다. 부모, 자녀, 형제자매, 손주, 삼촌·이모, 사촌, 조카 등이 인간관계의 중심입니다.'],
+      ['En Hispanoamérica, aunque últimamente se están produciendo cambios, todavía es común ver familias numerosas porque cada familia tiene tres o más hijos.', '중남미에서는 최근 변화가 있지만 아직도 자녀가 셋 이상인 대가족이 흔합니다.']
+    ] },
+    { id: 'd1', kind: 'dialogue', tag: 'Diálogo 1', title: 'Paula habla de su familia', short: 'Diálogo 1',
+      instr: 'a) Escucha el diálogo y practica con tus compañeros.', instrKo: '대화를 듣고 짝과 함께 연습하세요.',
+      ctx: 'Paula habla de su familia con su amigo.', ctxKo: '파울라가 친구에게 가족 이야기를 합니다.',
+      lines: [
+        ['Amigo', '¡Hola, Paula! ¿Qué es eso?', '안녕, 파울라! 그게 뭐야?'],
+        ['Paula', 'Es una foto de mi familia.', '우리 가족 사진이야.'],
+        ['Amigo', '¿Cuántos sois en tu familia?', '가족이 몇 명이야?'],
+        ['Paula', 'En mi familia somos cinco.', '우리 가족은 다섯 명이야.'],
+        ['Paula', 'Mira, esta del centro es mi abuela y a su derecha están mis padres. Este es mi hermano y esta soy yo.', '봐, 가운데 이분이 할머니고 그 오른쪽이 부모님이야. 이쪽은 오빠(남동생)고 이건 나야.'],
+        ['Amigo', '¿Eres la mayor?', '네가 맏이야?'],
+        ['Paula', 'No, soy la menor. Mi hermano tiene veinte años y yo tengo dieciséis.', '아니, 내가 막내야. 오빠는 스무 살이고 나는 열여섯 살이야.'],
+        ['Amigo', '¡Tienes una familia preciosa!', '정말 멋진 가족이네!'],
+        ['Paula', '¡Gracias!', '고마워!']
+      ],
+      exprs: ['¿Cuántas personas hay en tu familia?', 'En mi familia hay cinco personas.', '¿Eres la mayor de tus hermanos?', 'Soy cuatro años menor que mi hermano.'] },
+    { id: 'a1', kind: 'act', tag: 'Actividad 1', title: 'El árbol genealógico de la familia Torres', short: 'Act. 1',
+      instr: 'a) Mira el árbol genealógico de la familia Torres y contesta las siguientes preguntas.\nb) Di el nombre de los miembros de la familia Torres.', ko: '토레스 가족의 가계도를 보고 답하세요. 가계도: 도라 루시아 오르테가(Dora)와 하비에르 토레스(Javier) 부부 → 자녀 4명: 에르네스토(Ernesto, 아내 Estela Ramírez; 자녀 Amanda·Guillermo·Ernestito), 파울라(Paula), 안드레아(Andrea, 남편 Pedro Ruiz; 딸 Clarisa·Marisa), 라울(Raúl).',
+      parts: [
+        { type: 'fill', label: 'a) preguntas', text: '1) ¿Cuántos hijos tienen Dora y Javier? — Tienen {{cuatro}} hijos.\n2) ¿Cuántas hermanas tiene Raúl? — Tiene {{dos}} hermanas.\n3) ¿Cuántos sobrinos tiene Paula? — Tiene {{cinco}} sobrinos.\n4) ¿Cuántos primos tiene Marisa? — Tiene {{tres}} primos.\n5) ¿Cuántos nietos tienen Dora y Javier? — Tienen {{cinco}} nietos.' },
+        { type: 'fill', label: 'b) ¿quién es?', text: '1) Es el esposo de Andrea. → {{Pedro}}\n2) Es la hermana de Guillermo. → {{Amanda}}\n3) Es la madre de Raúl. → {{Dora}}\n4) Es el abuelo de Clarisa y Marisa. → {{Javier}}\n5) Es la sobrina de Paula. → {{Amanda|Clarisa|Marisa}}\n6) Es la esposa de Javier. → {{Dora}}' }
+      ] },
+    { id: 'a2', kind: 'act', tag: 'Actividad 2', title: 'El árbol genealógico de la familia García', short: 'Act. 2',
+      instr: 'Mira este árbol genealógico de la familia García y complétalo con los nombres correspondientes.\na) Árbol genealógico de la familia García (escucha)\nb) Escucha y di qué miembro de la familia está hablando.', ko: '듣고 가르시아 가계도를 완성하세요. ▶ 1번: 가족 소개(맨 위 조부모 Luis·Antonia, 둘째 줄 왼쪽부터 아들·딸·사위·딸, 맨 아래 손주 둘) ▶ 2번: 누가 말하고 있을까요?',
+      audio: ['Luis y Antonia tienen un hijo y dos hijas. El hijo mayor se llama Javier. Sus hijas se llaman Sara y Lucía. Javier y Lucía están solteros. Sara está casada con David y tienen un hijo y una hija. Su hijo se llama Raimón y su hija se llama Teresa.', 'Soy la hermana de Sara. Mi madre se llama Antonia y mi padre se llama Luis. Soy soltera y tengo dos sobrinos.'],
+      parts: [
+        { type: 'fill', label: 'a) abuelos · hijos · nietos', text: 'Abuelos: {{Luis}} y {{Antonia}}\nHijos (de izquierda a derecha): {{Javier}} · {{Sara}} · {{David}} (esposo de Sara) · {{Lucía}}\nNietos (hijos de Sara y David): {{Raimón}} y {{Teresa}}' },
+        { type: 'fill', label: 'b) ¿quién habla? (2ª grabación)', text: 'Habla {{Lucía}}.' }
+      ] },
+    { id: 'a3', kind: 'act', tag: 'Actividad 3', title: 'Mi árbol genealógico', short: 'Act. 3',
+      instr: 'Dibuja el árbol genealógico de tu familia.', ko: '우리 가족의 가계도를 그려 보세요. (노트에 그린 뒤 아래에 가족 이름을 정리해도 좋아요)',
+      parts: [{ type: 'open', rows: 4, ph: 'Mi abuelo: ... Mi abuela: ... Mi padre: ... Mi madre: ... Mis hermanos: ...' }] },
+    { id: 'a4', kind: 'act', tag: 'Actividad 4', title: 'Preguntas sobre la familia', short: 'Act. 4',
+      instr: 'Haz preguntas a tu compañero sobre su familia.\n1) ¿Cómo se llaman tus padres? 2) ¿Cuántos años tienen? 3) ¿Tienes hermanos? ¿Cuántos hermanos tienes? 4) ¿Están casados tus hermanos? 5) ¿Tienes sobrinos? 6) ¿Tienes tíos o tías? 7) ¿Cuántos primos tienes? 8) ¿Tienes abuelos? ¿Vives con ellos?\n(hermano mayor · hermano menor · hijo único · abuelo paterno · abuelo materno)', ko: '위 질문으로 짝에게 가족에 대해 물어보고, 들은 답을 적어 보세요.',
+      audio: ['¿Cómo se llaman tus padres?', '¿Cuántos años tienen?', '¿Tienes hermanos? ¿Cuántos hermanos tienes?', '¿Están casados tus hermanos?', '¿Tienes sobrinos?', '¿Tienes tíos o tías?', '¿Cuántos primos tienes?', '¿Tienes abuelos? ¿Vives con ellos?'],
+      parts: [{ type: 'open', rows: 4, ph: '짝의 대답을 적어 보세요' }] },
+    { id: 'd2', kind: 'dialogue', tag: 'Diálogo 2', title: 'Juan y Cristina hablan de su familia', short: 'Diálogo 2',
+      instr: 'a) Escucha el diálogo y practica con tus compañeros.', instrKo: '대화를 듣고 짝과 함께 연습하세요.',
+      ctx: 'Juan y Cristina hablan de los miembros de su familia.', ctxKo: '후안과 크리스티나가 가족 구성원에 대해 이야기합니다.',
+      lines: [
+        ['Juan', 'Tienes una familia grande, ¿verdad?', '너희 가족은 대가족이지, 맞지?'],
+        ['Cristina', 'Pues, sí. Mis padres tienen cinco hermanos y tengo muchos tíos y primos.', '응, 맞아. 우리 부모님은 형제자매가 다섯이라서 삼촌·이모와 사촌이 많아.'],
+        ['Juan', '¿Cuántos años tienen tus padres?', '부모님은 몇 살이셔?'],
+        ['Cristina', 'Mi padre tiene cincuenta años y mi madre tiene la misma edad.', '아버지는 50세이고 어머니도 같은 나이야.'],
+        ['Juan', '¿Cómo son?', '어떤 분들이셔?'],
+        ['Cristina', 'Son muy simpáticos y trabajadores, pero a veces son estrictos conmigo.', '아주 친절하고 부지런하지만 가끔 나한테는 엄격하셔.'],
+        ['Juan', '¿A qué se dedican tus padres?', '부모님은 무슨 일을 하셔?'],
+        ['Cristina', 'Mi padre es maestro de una escuela. Mi madre es enfermera y trabaja en un hospital grande cerca de mi casa.', '아버지는 학교 선생님이고, 어머니는 간호사로 우리 집 근처 큰 병원에서 일하셔.'],
+        ['Juan', '¿Tienes hermanos?', '형제자매 있어?'],
+        ['Cristina', 'No, soy hija única. ¿Y tú? ¿Cuántos hermanos tienes?', '아니, 나는 외동딸이야. 너는? 형제가 몇이야?'],
+        ['Juan', 'Yo tengo dos hermanas pequeñas. Soy el mayor de los tres.', '나는 여동생이 둘 있어. 셋 중에 내가 맏이야.']
+      ],
+      exprs: ['¿Qué edad tienen tus padres?', '¿Cuál es la profesión de tus padres?', 'No tengo hermanos.', 'Yo tengo dos hermanos menores.', 'el hijo mayor'] },
+    { id: 'a5', kind: 'act', tag: 'Actividad 5', title: '¿Cómo son los miembros de tu familia?', short: 'Act. 5',
+      instr: '¿Cómo son los miembros de tu familia? Habla con tu compañero siguiendo el modelo.\nModelo: Mi padre se llama Kise Park. Tiene 48 años. Es profesor de la universidad. Es generoso y activo.', ko: '가족 구성원(조부모, 어머니, 형제, 좋아하는 사촌·삼촌, 나)의 이름·나이·성격을 모델처럼 써 보세요.',
+      parts: [{ type: 'open', rows: 5, ph: 'Mi madre se llama ... Tiene ... años. Es ...' }] },
+    { id: 'a6', kind: 'act', tag: 'Actividad 6', title: 'Estado civil y posición familiar', short: 'Act. 6',
+      instr: 'Con tu compañero habla de tu familia utilizando las siguientes palabras: casado · soltero · viudo · divorciado · hijo único · el mayor · el menor\n1) Yo soy ___. 2) Mi abuelo/a es ___. 3) Mi padre es ___. 4) Mi madre es ___. 5) Mi tío/a favorito/a es ___. 6) Mi primo/a favorito/a es ___.', ko: '결혼 상태와 형제 순서를 나타내는 낱말로 가족을 소개하세요.',
+      parts: [{ type: 'say', words: ['casado', 'soltero', 'viudo', 'divorciado', 'hijo único', 'el mayor', 'el menor'] }, { type: 'open', rows: 3, ph: 'Yo soy ... Mi abuelo es ... Mi padre es ...' }] },
+    { id: 'a7', kind: 'act', tag: 'Actividad 7', title: 'Escucha y repite los números', short: 'Act. 7',
+      instr: 'Escucha y repite estos números.', ko: '숫자를 눌러 듣고 따라 하세요. (101~9502)',
+      audio: ['ciento uno, ciento dos, ciento cincuenta y siete, ciento noventa y ocho, doscientos, trescientos, cuatrocientos, quinientos, seiscientos, setecientos, ochocientos, novecientos, mil, dos mil, cinco mil trescientos cincuenta, siete mil, nueve mil quinientos dos'],
+      parts: [{ type: 'say', words: [['101', 'ciento uno'], ['102', 'ciento dos'], ['157', 'ciento cincuenta y siete'], ['198', 'ciento noventa y ocho'], ['200', 'doscientos'], ['300', 'trescientos'], ['400', 'cuatrocientos'], ['500', 'quinientos'], ['600', 'seiscientos'], ['700', 'setecientos'], ['800', 'ochocientos'], ['900', 'novecientos'], ['1000', 'mil'], ['2000', 'dos mil'], ['5350', 'cinco mil trescientos cincuenta'], ['7000', 'siete mil'], ['9502', 'nueve mil quinientos dos']] }] },
+    { id: 'a8', kind: 'act', tag: 'Actividad 8', title: 'Monedas y billetes', short: 'Act. 8',
+      instr: 'a) Busca la palabra ‘moneda’ en el diccionario. ¿Cuál es la moneda de tu país?\nUnión Europea: euro / céntimo · Estados Unidos: dólar / centavo · México: peso / centavo · Corea del Sur: won\nb) Observa estos billetes. ¿Cuántos wones/pesos/euros/dólares hay?  Modelo: Hay ochocientos ochenta y cinco euros.', ko: 'b) 그림 속 지폐의 총액을 스페인어로 쓰세요. (총액: ① 885유로 ② 186달러 ③ 820페소 ④ 66,000원)',
+      parts: [{ type: 'fill', text: '1) 885 € → Hay {{ochocientos ochenta y cinco}} euros.\n2) 186 $ → Hay {{ciento ochenta y seis}} dólares.\n3) 820 MXN → Hay {{ochocientos veinte}} pesos.\n4) 66.000 ₩ → Hay {{sesenta y seis mil}} wones.' }] },
+    { id: 'a9', kind: 'act', tag: 'Actividad 9', title: 'Escucha los diálogos y escribe los números', short: 'Act. 9',
+      instr: 'Escucha los diálogos y escribe los números que oigas.', ko: '대화를 듣고 들리는 숫자를 숫자로 쓰세요.',
+      audio: ['¿Qué número de autobús tomas? El setecientos cincuenta.', '¿Cuál es tu número de asiento? El ciento cinco.', '¿Está lejos tu pueblo? Sí, a unos quinientos kilómetros.', '¿Cuánto vale este ordenador? Ochocientos setenta euros.', '¿Cuántos años tiene este árbol? Casi doscientos años.', '¿Cuántas páginas tiene el libro? Unas novecientas páginas.'],
+      parts: [{ type: 'fill', text: '1) {{750}}　2) {{105}}　3) {{500}}\n4) {{870}}　5) {{200}}　6) {{900}}' }] },
+    { id: 'chk', kind: 'check', tag: '¡Compruébalo!', title: 'Las fotos de mi familia', short: '¡Compruébalo!',
+      instr: 'Enseña las fotos de tu familia a tus compañeros. Explícales quién es, qué hace, cuántos años tiene y cómo es cada uno de los miembros de tu familia.', ko: '가족 사진을 친구들에게 보여 주며 누구인지, 무슨 일을 하는지, 몇 살인지, 어떤 사람인지 설명해 보세요.',
+      parts: [{ type: 'open', rows: 6, ph: 'Esta es mi madre. Se llama ... Tiene ... años. Es ...' }] },
+    { id: 'use', kind: 'useful', tag: 'Expresiones útiles', title: '유용한 표현과 속담', short: 'Expresiones útiles',
+      exprs: ['Esta es mi familia.', 'Estos son mis hermanos.', '¿Cuántos hermanos tienes?', 'Tengo un hermano.', '¿Qué hacen tus padres?', 'Mi padre es profesor y mi madre es enfermera.', '¿Cuántos años tienes?', 'Tengo dieciséis años.', '¿Tu tío está soltero o casado?', 'Está soltero.', '¿Cuál es la moneda de tu país?', 'Es el won.'],
+      proverb: 'Hay un solo niño bello en el mundo y cada madre lo tiene. (José Martí, 1853-1895)', proverbKo: '세상에 아름다운 아이는 단 하나뿐이고, 모든 어머니가 그 아이를 갖고 있다.' }
+  ]
+};
